@@ -1,88 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kotkantien maalaus-ja tapetointi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" href="Etusivu.css">
-    <script src="script.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kotkantien maalaus- ja tapetointi</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+:root{--c1:#2f5d7c;--c2:#a9b8a3;--c3:#e3c9a0;--c4:#d9a441;--c5:#b5523b}
+body{line-height:1.65}
+h1,h2,h3,.navbar-brand{font-weight:800;letter-spacing:-.01em}
+.btn-primary{--bs-btn-bg:var(--c1);--bs-btn-border-color:var(--c1);--bs-btn-hover-bg:#244a63;--bs-btn-hover-border-color:#244a63;--bs-btn-active-bg:#1d3c50;--bs-btn-active-border-color:#1d3c50}
+[data-bs-theme=dark] .btn-primary{--bs-btn-bg:#7fb0d1;--bs-btn-border-color:#7fb0d1;--bs-btn-color:#12202a;--bs-btn-hover-bg:#96c0dc;--bs-btn-hover-border-color:#96c0dc;--bs-btn-hover-color:#12202a}
+.logo-box{width:52px;height:52px;border-radius:8px;font-size:.65rem;line-height:1.1;overflow:hidden}
+.logo-box img{width:100%;height:100%;object-fit:contain}
+.fan{display:flex;gap:6px;align-items:flex-end;height:360px}
+.fan i{flex:1;border-radius:6px 6px 0 0}
+.fan i:nth-child(1){background:var(--c1);height:100%}
+.fan i:nth-child(2){background:var(--c2);height:84%}
+.fan i:nth-child(3){background:var(--c3);height:68%}
+.fan i:nth-child(4){background:var(--c4);height:52%}
+.fan i:nth-child(5){background:var(--c5);height:36%}
+.svc{border-top:6px solid var(--c1)}
+.col:nth-child(2) .svc{border-color:var(--c4)}
+.col:nth-child(3) .svc{border-color:var(--c5)}
+.col:nth-child(4) .svc{border-color:var(--c2)}
+.phone-big{font-size:1.8rem;font-weight:800;text-decoration:none;color:inherit}
+@media(max-width:767px){.fan{height:180px}}
+</style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand"><img src="c:\Users\s5viri00\javascript näyttötyö\kuvat\kotkatie kuva.png" alt="Kotkantien maalaus-ja tapetointi" width="30" height="30">Kotkantien maalaus-ja tapetointi</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="html/index.html">Etusivu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="html/Palvelut.html">Palvelut</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="html/Galleria.html">Galleria</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="html/Yhteystiedot.html">Yhteystiedot</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="html/Värien testaus.html">Värien testaus</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-md border-bottom">
+ <div class="container">
+  <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+   <span class="logo-box d-grid place-items-center text-center text-body-secondary" style="place-items:center"><img src="c:\Users\ricov\javascript lopputyö\javascript-paintpage\kuvat\kotkatie kuva.png" alt="Kotkantien maalaus- ja tapetointi"></span>
+   <span class="fs-6 lh-sm">Kotkantien maalaus- ja tapetointi<small class="d-block fw-normal text-body-secondary">Maalaus- ja tapetointityöt</small></span>
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Avaa valikko">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="menu">
+   <ul class="navbar-nav fw-semibold">
+    <li class="nav-item"><a class="nav-link" href="#palvelut">Palvelut</a></li>
+    <li class="nav-item"><a class="nav-link" href="#miksi">Miksi meille</a></li>
+    <li class="nav-item"><a class="nav-link" href="#yhteys">Yhteystiedot</a></li>
+   </ul>
+  </div>
+ </div>
+</nav>
 
-    <div class="row">
-        <div class="col-12 text-center py-5">
-            <h1>Welcome to Kotkantien maalaus-ja tapetointi</h1>
-            <p>Luotettu ammattitaitoinen maalaus- ja tapetointiyritys</p>
-        </div>
+<header class="container py-5">
+ <div class="row align-items-center g-5">
+  <div class="col-md-7">
+   <h1 class="display-4 fw-bold">Seinät kuntoon, koti kuntoon.</h1>
+   <p class="lead text-body-secondary my-4">Maalaamme ja tapetoimme kodit, toimistot ja liiketilat siististi ja sovitussa aikataulussa. Pyydä ilmainen tarjous.</p>
+   <div class="d-flex flex-wrap gap-2">
+    <a class="btn btn-primary btn-lg" href="#yhteys">Pyydä tarjous</a>
+    <a class="btn btn-outline-secondary btn-lg" href="tel:+358401234567">Soita 040 123 4567</a>
+   </div>
+  </div>
+  <div class="col-md-5"><div class="fan" role="img" aria-label="Maalisävyjä"><i></i><i></i><i></i><i></i><i></i></div></div>
+ </div>
+</header>
+
+<main>
+ <section id="palvelut" class="bg-body-tertiary py-5">
+  <div class="container">
+   <h2 class="mb-4">Palvelumme</h2>
+   <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+    <div class="col"><div class="svc pt-3"><h3 class="h5">Sisämaalaus</h3><p class="text-body-secondary mb-0">Seinät, katot, ovet ja listat. Pohjatyöt tehdään kunnolla, jotta pinta kestää.</p></div></div>
+    <div class="col"><div class="svc pt-3"><h3 class="h5">Tapetointi</h3><p class="text-body-secondary mb-0">Kuitu-, vlies- ja paperitapetit. Vanhat tapetit poistetaan ja seinät tasoitetaan tarvittaessa.</p></div></div>
+    <div class="col"><div class="svc pt-3"><h3 class="h5">Ulkomaalaus</h3><p class="text-body-secondary mb-0">Julkisivut, ikkunat, terassit ja aidat. Maalaus suojaa ja uudistaa pinnan.</p></div></div>
+    <div class="col"><div class="svc pt-3"><h3 class="h5">Pienet korjaukset</h3><p class="text-body-secondary mb-0">Tasoitus, silppuaminen, paikkaus ja kosteusvaurioiden jälkimaalaukset.</p></div></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="miksi" class="py-5">
+  <div class="container">
+   <h2 class="mb-4">Miksi Kotkantien maalaus</h2>
+   <div class="row g-4">
+    <div class="col-md-4"><h3 class="h5">Ilmainen tarjous</h3><p class="text-body-secondary">Kerro kohde ja toiveet. Annamme hinta-arvion ilman sitoumusta.</p></div>
+    <div class="col-md-4"><h3 class="h5">Siisti työnjälki</h3><p class="text-body-secondary">Suojaamme huonekalut ja lattiat ja siivoamme työn jälkeen.</p></div>
+    <div class="col-md-4"><h3 class="h5">Sovittu aikataulu</h3><p class="text-body-secondary">Aloitamme ja valmistumme sovittuna päivänä.</p></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="yhteys" class="bg-body-tertiary py-5">
+  <div class="container">
+   <div class="row g-5">
+    <div class="col-md-6">
+     <h2>Pyydä tarjous</h2>
+     <p>Täytä lomake, niin otamme yhteyttä. Vastaamme yleensä saman päivän aikana.</p>
+     <form id="tarjous" class="needs-validation" novalidate>
+      <div class="mb-3">
+       <label for="nimi" class="form-label">Nimi</label>
+       <input type="text" class="form-control" id="nimi" required>
+       <div class="invalid-feedback">Kirjoita nimesi.</div>
+      </div>
+      <div class="mb-3">
+       <label for="puh" class="form-label">Puhelin tai sähköposti</label>
+       <input type="text" class="form-control" id="puh" required>
+       <div class="invalid-feedback">Kirjoita puhelinnumero tai sähköpostiosoite.</div>
+      </div>
+      <div class="mb-3">
+       <label for="tyo" class="form-label">Työn tyyppi</label>
+       <select class="form-select" id="tyo">
+        <option>Sisämaalaus</option><option>Tapetointi</option><option>Ulkomaalaus</option><option>Muu</option>
+       </select>
+      </div>
+      <div class="mb-3">
+       <label for="viesti" class="form-label">Kerro kohteesta</label>
+       <textarea class="form-control" id="viesti" rows="3" required></textarea>
+       <div class="invalid-feedback">Kerro lyhyesti, mitä haluat tehtäväksi.</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Lähetä tarjouspyyntö</button>
+     </form>
     </div>
-
-    <div class="container" style="margin-top: 40px;">
-        <div class="" style="display: flex; justify-content: center; gap: 40px;" max width="20rem">
-            <div class="card col-5">
-                <div class="card-body">
-                    <h5 class="card-title">Palvelut</h5>
-                    <p class="card-text">Tarjoamme monipuolisia maalaus- ja tapetointipalveluita.</p>
-                    <a href="html/Palvelut.html" class="btn btn-primary">Lue lisää</a>
-                </div>
-            </div>
-            <div class="card col-5">
-                <div class="card-body">
-                    <h5 class="card-title">Galleria</h5>
-                    <p class="card-text">Tutustu aiempiin projekteihimme ja inspiroidu.</p>
-                    <a href="html/Galleria.html" class="btn btn-primary">Katso galleria</a>
-                </div>
-            </div>
-        </div>
+    <div class="col-md-6">
+     <p class="mb-0 text-body-secondary">Puhelin</p>
+     <a class="phone-big d-block mb-3" href="tel:+358401234567">040 123 4567</a>
+     <p class="mb-0 text-body-secondary">Sähköposti</p>
+     <a class="fs-5 fw-bold d-block mb-3 text-reset" href="mailto:info@kotkantienmaalaus.fi">info@kotkantienmaalaus.fi</a>
+     <p class="text-body-secondary">Palvelualue: Oulu ja ympäristö<br>Arkisin 8–17</p>
     </div>
+   </div>
+  </div>
+ </section>
+</main>
 
-    <div class="container" style="margin-top: 40px;">
-        <div class="" style="display: flex; justify-content: center; gap: 40px;" max width="20rem">
-            <div class="card col-5">
-                <div class="card-body">
-                    <h5 class="card-title">Värien testaus</h5>
-                    <p class="card-text">Testaa eri värejä ennen valintaa.</p>
-                    <a href="html/Värien testaus.html" class="btn btn-primary">Avaa värien testaus</a>
-                </div>
-            </div>
-            <div class="card col-5">
-                <div class="card-body">
-                    <h5 class="card-title">Yhteystiedot</h5>
-                    <p class="card-text">Ota yhteyttä meihin ja kysy lisätietoja palveluistamme.</p>
-                    <a href="html/Yhteystiedot.html" class="btn btn-primary">Näytä yhteystiedot</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<footer class="py-4 border-top text-body-secondary small">
+ <div class="container">© 2026 Kotkantien maalaus- ja tapetointi</div>
+</footer>
 
 
+<div class="modal fade" id="kiitos" tabindex="-1" aria-labelledby="kiitosOtsikko" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+   <div class="modal-header"><h2 class="modal-title h5" id="kiitosOtsikko">Kiitos tarjouspyynnöstä</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sulje"></button></div>
+   <div class="modal-body">Sähköpostiohjelmasi avautuu viestin lähettämistä varten. Voit myös soittaa numeroon 040 123 4567.</div>
+   <div class="modal-footer"><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Sulje</button></div>
+  </div>
+ </div>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+const mq = window.matchMedia('(prefers-color-scheme: dark)');
+const setTheme = () => document.documentElement.setAttribute('data-bs-theme', mq.matches ? 'dark' : 'light');
+setTheme(); mq.addEventListener('change', setTheme);
+
+
+const form = document.getElementById('tarjous');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  if (!form.checkValidity()) { form.classList.add('was-validated'); return; }
+  const v = id => document.getElementById(id).value.trim();
+  const body = `Nimi: ${v('nimi')}\nYhteys: ${v('puh')}\nTyö: ${v('tyo')}\n\n${v('viesti')}`;
+  window.location.href = 'mailto:info@kotkantienmaalaus.fi?subject=' + encodeURIComponent('Tarjouspyyntö') + '&body=' + encodeURIComponent(body);
+  new bootstrap.Modal(document.getElementById('kiitos')).show();
+  form.reset(); form.classList.remove('was-validated');
+});
+</script>
 </body>
 </html>

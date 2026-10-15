@@ -1,0 +1,29 @@
+:root{
+    --c1:#2f5d7c;
+    --c2:#a9b8a3;
+    --c3:#e3c9a0;
+    --c4:#d9a441;
+    --c5:#b5523b
+}
+body{
+    line-height:1.65
+}
+h1,h2,h3,.navbar-brand{
+    font-weight:800;letter-spacing:-.01em
+}
+.btn-primary{
+    --bs-btn-bg:var(--c1);
+    --bs-btn-border-color:var(--c1);
+    --bs-btn-hover-bg:#244a63;
+    --bs-btn-hover-border-color:#244a63;
+    --bs-btn-active-bg:#1d3c50;
+    --bs-btn-active-border-color:#1d3c50
+}
+[data-bs-theme=dark] .btn-primary{
+    --bs-btn-bg:#7fb0d1;
+    --bs-btn-border-color:#7fb0d1;
+    --bs-btn-color:#12202a;
+    --bs-btn-hover-bg:#96c0dc;
+    --bs-btn-hover-border-color:#96c0dc;
+    --bs-btn-hover-color:#12202a
+}

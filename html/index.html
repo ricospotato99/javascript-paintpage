@@ -33,7 +33,7 @@ h1,h2,h3,.navbar-brand{font-weight:800;letter-spacing:-.01em}
 <nav class="navbar navbar-expand-md border-bottom">
  <div class="container">
   <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-   <span class="logo-box d-grid place-items-center text-center text-body-secondary" style="place-items:center"><img src="c:\Users\ricov\javascript lopputyö\javascript-paintpage\kuvat\kotkatie kuva.png" alt="Kotkantien maalaus- ja tapetointi"></span>
+   <span class="logo-box d-grid place-items-center text-center text-body-secondary" style="place-items:center"><img src="c:\Users\s5viri00\java script loppytyö\javascript-paintpage\kuvat\kotkatie kuva.png" alt="Kotkantien maalaus- ja tapetointi"></span>
    <span class="fs-6 lh-sm">Kotkantien maalaus- ja tapetointi<small class="d-block fw-normal text-body-secondary">Maalaus- ja tapetointityöt</small></span>
   </a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Avaa valikko">
@@ -41,9 +41,10 @@ h1,h2,h3,.navbar-brand{font-weight:800;letter-spacing:-.01em}
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="menu">
    <ul class="navbar-nav fw-semibold">
-    <li class="nav-item"><a class="nav-link" href="#palvelut">Palvelut</a></li>
-    <li class="nav-item"><a class="nav-link" href="#miksi">Miksi meille</a></li>
-    <li class="nav-item"><a class="nav-link" href="#yhteys">Yhteystiedot</a></li>
+    <li class="nav-item"><a class="nav-link" active" aria-current="page" href="c:\Users\s5viri00\java script loppytyö\javascript-paintpage\html\index.html">Etusivu</a></li>
+    <li class="nav-item"><a class="nav-link" href="c:\Users\s5viri00\java script loppytyö\javascript-paintpage\html\Palvelut.html">Palvelut</a></li>
+    <li class="nav-item"><a class="nav-link" href="c:\Users\s5viri00\java script loppytyö\javascript-paintpage\html\Galleria.html">Galleria</a></li>
+    <li class="nav-item"><a class="nav-link" href="c:\Users\s5viri00\java script loppytyö\javascript-paintpage\html\Yhteystiedot.html">Yhteystiedot</a></li>
    </ul>
   </div>
  </div>
@@ -163,6 +164,19 @@ form.addEventListener('submit', e => {
   new bootstrap.Modal(document.getElementById('kiitos')).show();
   form.reset(); form.classList.remove('was-validated');
 });
+
+const items = document.querySelectorAll('.item');
+const btns = document.querySelectorAll('.filters .btn');
+btns.forEach(b => b.addEventListener('click', () => {
+  btns.forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
+  b.classList.add('on'); b.setAttribute('aria-pressed', 'true');
+  let n = 0;
+  items.forEach(i => {
+    const show = b.dataset.filter === 'all' || i.dataset.cat === b.dataset.filter;
+    i.classList.toggle('hide', !show); if (show) n++;
+  });
+  document.getElementById('tyhja').classList.toggle('d-none', n > 0);
+}));
 </script>
 </body>
 </html>

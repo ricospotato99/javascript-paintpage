@@ -5,78 +5,161 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Galleria | Kotkantien maalaus- ja tapetointi</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="css/Galleria.css" rel="stylesheet">
+<style>
+ .gallery-btn { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+ .gallery-btn img { object-fit: cover; transition: transform .3s ease; }
+ .gallery-btn:hover img { transform: scale(1.04); }
+ .gallery-btn:focus-visible { outline: 3px solid var(--bs-primary); outline-offset: -3px; }
+ .gallery-card .ratio { overflow: hidden; }
+</style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-md border-bottom">
  <div class="container">
   <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-
-   <span class="logo-box text-center text-body-secondary"><img src="kuvat/kotkatielogo.png" alt="Kotkantien maalaus- ja tapetointi"></span>
+   <span class="logo-box d-grid place-items-center text-center text-body-secondary"><img src="../kuvat/kotkatielogo.png" alt="Kotkantien maalaus- ja tapetointi" width="52" height="52"></span>
    <span class="fs-6 lh-sm">Kotkantien maalaus- ja tapetointi<small class="d-block fw-normal text-body-secondary">Maalaus- ja tapetointityöt</small></span>
   </a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Avaa valikko"><span class="navbar-toggler-icon"></span></button>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Avaa valikko">
+   <span class="navbar-toggler-icon"></span>
+  </button>
   <div class="collapse navbar-collapse justify-content-end" id="menu">
    <ul class="navbar-nav fw-semibold">
-    <li class="nav-item"><a class="nav-link" href="javascript-paintpage/html/index.html">Etusivu</a></li>
-    <li class="nav-item"><a class="nav-link" href="javascript-paintpage/html/Palvelut.html">Palvelut</a></li>
-    <li class="nav-item"><a class="nav-link active" aria-current="page" href="javascript-paintpage/html/Galleria.html">Galleria</a></li>
-    <li class="nav-item"><a class="nav-link" href="javascript-paintpage/html/Yhteystiedot.html">Yhteystiedot</a></li>
-    <li class="nav-item"><a class="nav-link" href="javascript-paintpage/html/Varien-testaus.html">värien testaus</a></li>
+    <li class="nav-item"><a class="nav-link" href="index.html">Etusivu</a></li>
+    <li class="nav-item"><a class="nav-link" href="Palvelut.html">Palvelut</a></li>
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="Galleria.html">Galleria</a></li>
+    <li class="nav-item"><a class="nav-link" href="Yhteystiedot.html">Yhteystiedot</a></li>
+    <li class="nav-item"><a class="nav-link" href="Värientestaus.html">Värientestaus</a></li>
    </ul>
   </div>
  </div>
 </nav>
 
-<header class="container py-5">
+<div class="container py-5">
  <h1 class="display-5 fw-bold">Galleria</h1>
  <p class="lead text-body-secondary mb-0" style="max-width:36rem">Katso esimerkkejä tekemistämme töistä. Klikkaa kuvaa nähdäksesi sen isompana.</p>
-</header>
+</div>
 
-<main class="container pb-5">
- <div class="filters d-flex flex-wrap gap-2 mb-4" role="group" aria-label="Suodata kuvat">
-  <button class="btn btn-outline-secondary on" data-filter="all" aria-pressed="true">Kaikki</button>
-  <button class="btn btn-outline-secondary" data-filter="sisa" aria-pressed="false">Sisämaalaus</button>
-  <button class="btn btn-outline-secondary" data-filter="tapetti" aria-pressed="false">Tapetointi</button>
-  <button class="btn btn-outline-secondary" data-filter="ulko" aria-pressed="false">Ulkomaalaus</button>
+<section class="container pb-5">
+
+ <div class="d-flex flex-wrap gap-2 mb-4" id="suodattimet" role="group" aria-label="Suodata kuvat">
+  <button type="button" class="btn btn-primary" data-filter="kaikki" aria-pressed="true">Kaikki</button>
+  <button type="button" class="btn btn-outline-secondary" data-filter="sisamaalaus" aria-pressed="false">Sisämaalaus</button>
+  <button type="button" class="btn btn-outline-secondary" data-filter="tapetointi" aria-pressed="false">Tapetointi</button>
+  <button type="button" class="btn btn-outline-secondary" data-filter="ulkomaalaus" aria-pressed="false">Ulkomaalaus</button>
  </div>
 
+ <div class="row g-4" id="kuvat">
 
- <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4" id="grid">
-  <div class="col item" data-cat="sisa"><button class="tile" data-bs-toggle="modal" data-bs-target="#kuva"><div class="ph a">Olohuoneen seinät</div><small>Sisämaalaus · Oulu</small></button></div>
-  <div class="col item" data-cat="tapetti"><button class="tile" data-bs-toggle="modal" data-bs-target="#kuva"><div class="ph b">Makuuhuoneen tehostetapetti</div><small>Tapetointi · Oulu</small></button></div>
-  <div class="col item" data-cat="ulko"><button class="tile" data-bs-toggle="modal" data-bs-target="#kuva"><div class="ph c">Omakotitalon julkisivu</div><small>Ulkomaalaus · Kiiminki</small></button></div>
-  <div class="col item" data-cat="sisa"><button class="tile" data-bs-toggle="modal" data-bs-target="#kuva"><div class="ph d">Keittiön kaapit ja seinät</div><small>Sisämaalaus · Oulu</small></button></div>
-  <div class="col item" data-cat="tapetti"><button class="tile" data-bs-toggle="modal" data-bs-target="#kuva"><div class="ph c">Eteisen kuvioitu tapetti</div><small>Tapetointi · Haukipudas</small></button></div>
-  <div class="col item" data-cat="ulko"><button class="tile" data-bs-toggle="modal" data-bs-target="#kuva"><div class="ph a">Terassi ja aita</div><small>Ulkomaalaus · Oulunsalo</small></button></div>
- </div>
- <p id="tyhja" class="text-body-secondary d-none mt-3">Tässä luokassa ei ole vielä kuvia.</p>
-</main>
-
-<section class="bg-body-tertiary py-5">
- <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
-  <div>
-   <h2 class="h3 mb-1">Haluatko samanlaisen tuloksen?</h2>
-   <p class="mb-0 text-body-secondary">Pyydä ilmainen tarjous omaan kohteeseesi.</p>
+  <div class="col-md-6 col-lg-4" data-category="sisamaalaus">
+   <div class="card h-100 gallery-card">
+    <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Olohuoneen seinät">
+     <div class="ratio ratio-4x3"><img src="../kuvat/galleria1.jpg" alt="Olohuoneen seinät" data-title="Olohuoneen seinät" data-meta="Sisämaalaus · Oulu"></div>
+    </button>
+    <div class="card-body">
+     <h2 class="h6 fw-semibold mb-1">Olohuoneen seinät</h2>
+     <p class="small text-body-secondary mb-0">Sisämaalaus · Oulu</p>
+    </div>
+   </div>
   </div>
-  <a class="btn btn-primary btn-lg" href="index.html#yhteys">Pyydä tarjous</a>
+
+  <div class="col-md-6 col-lg-4" data-category="tapetointi">
+   <div class="card h-100 gallery-card">
+    <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Makuuhuoneen tehostetapetti">
+     <div class="ratio ratio-4x3"><img src="../kuvat/galleria2.jpg" alt="Makuuhuoneen tehostetapetti" data-title="Makuuhuoneen tehostetapetti" data-meta="Tapetointi · Oulu"></div>
+    </button>
+    <div class="card-body">
+     <h2 class="h6 fw-semibold mb-1">Makuuhuoneen tehostetapetti</h2>
+     <p class="small text-body-secondary mb-0">Tapetointi · Oulu</p>
+    </div>
+   </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4" data-category="ulkomaalaus">
+   <div class="card h-100 gallery-card">
+    <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Omakotitalon julkisivu">
+     <div class="ratio ratio-4x3"><img src="../kuvat/galleria3.jpg" alt="Omakotitalon julkisivu" data-title="Omakotitalon julkisivu" data-meta="Ulkomaalaus · Kiiminki"></div>
+    </button>
+    <div class="card-body">
+     <h2 class="h6 fw-semibold mb-1">Omakotitalon julkisivu</h2>
+     <p class="small text-body-secondary mb-0">Ulkomaalaus · Kiiminki</p>
+    </div>
+   </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4" data-category="sisamaalaus">
+   <div class="card h-100 gallery-card">
+    <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Keittiön kaapit ja seinät">
+     <div class="ratio ratio-4x3"><img src="../kuvat/galleria4.jpg" alt="Keittiön kaapit ja seinät" data-title="Keittiön kaapit ja seinät" data-meta="Sisämaalaus · Oulu"></div>
+    </button>
+    <div class="card-body">
+     <h2 class="h6 fw-semibold mb-1">Keittiön kaapit ja seinät</h2>
+     <p class="small text-body-secondary mb-0">Sisämaalaus · Oulu</p>
+    </div>
+   </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4" data-category="tapetointi">
+   <div class="card h-100 gallery-card">
+    <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Eteisen kuvioitu tapetti">
+     <div class="ratio ratio-4x3"><img src="../kuvat/galleria5.jpg" alt="Eteisen kuvioitu tapetti" data-title="Eteisen kuvioitu tapetti" data-meta="Tapetointi · Haukipudas"></div>
+    </button>
+    <div class="card-body">
+     <h2 class="h6 fw-semibold mb-1">Eteisen kuvioitu tapetti</h2>
+     <p class="small text-body-secondary mb-0">Tapetointi · Haukipudas</p>
+    </div>
+   </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4" data-category="ulkomaalaus">
+   <div class="card h-100 gallery-card">
+    <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Terassi ja aita">
+     <div class="ratio ratio-4x3"><img src="../kuvat/galleria6.jpg" alt="Terassi ja aita" data-title="Terassi ja aita" data-meta="Ulkomaalaus · Oulunsalo"></div>
+    </button>
+    <div class="card-body">
+     <h2 class="h6 fw-semibold mb-1">Terassi ja aita</h2>
+     <p class="small text-body-secondary mb-0">Ulkomaalaus · Oulunsalo</p>
+    </div>
+   </div>
+  </div>
+
  </div>
 </section>
+
+<section class="container pb-5">
+ <div class="card">
+  <div class="card-body p-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+   <div>
+    <h2 class="h5 fw-semibold mb-1">Haluatko samanlaisen tuloksen?</h2>
+    <p class="text-body-secondary mb-0">Pyydä ilmainen tarjous omaan kohteeseesi.</p>
+   </div>
+   <a class="btn btn-primary" href="Yhteystiedot.html">Pyydä tarjous</a>
+  </div>
+ </div>
+</section>
+
+<!-- Kuvan suurennus -->
+<div class="modal fade" id="kuvaModal" tabindex="-1" aria-labelledby="kuvaOtsikko" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <div>
+     <h2 class="modal-title fs-5" id="kuvaOtsikko"></h2>
+     <p class="small text-body-secondary mb-0" id="kuvaMeta"></p>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sulje"></button>
+   </div>
+   <div class="modal-body p-0">
+    <img id="kuvaIso" class="img-fluid w-100" src="" alt="">
+   </div>
+  </div>
+ </div>
+</div>
 
 <footer class="py-4 border-top text-body-secondary small">
  <div class="container">© 2026 Kotkantien maalaus- ja tapetointi</div>
 </footer>
-
-
-<div class="modal fade" id="kuva" tabindex="-1" aria-labelledby="kuvaOtsikko" aria-hidden="true">
- <div class="modal-dialog modal-lg modal-dialog-centered">
-  <div class="modal-content">
-   <div class="modal-header"><h2 class="modal-title h5" id="kuvaOtsikko"></h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sulje"></button></div>
-   <div class="modal-body" id="kuvaSisalto"></div>
-  </div>
- </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -86,29 +169,48 @@ const setTheme = () => document.documentElement.setAttribute('data-bs-theme', mq
 setTheme(); mq.addEventListener('change', setTheme);
 
 
-const items = document.querySelectorAll('.item');
-const btns = document.querySelectorAll('.filters .btn');
-btns.forEach(b => b.addEventListener('click', () => {
-  btns.forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
-  b.classList.add('on'); b.setAttribute('aria-pressed', 'true');
-  let n = 0;
-  items.forEach(i => {
-    const show = b.dataset.filter === 'all' || i.dataset.cat === b.dataset.filter;
-    i.classList.toggle('hide', !show); if (show) n++;
+
+const varit = ['#6f8f86', '#b5836a', '#7d8fa8', '#a99a6e', '#8a7aa0', '#7a9a6e'];
+document.querySelectorAll('#kuvat img').forEach((img, i) => {
+  img.addEventListener('error', () => {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+      <rect width="800" height="600" fill="${varit[i % varit.length]}"/>
+      <text x="400" y="310" font-family="sans-serif" font-size="32" fill="#fff" text-anchor="middle" opacity=".85">${img.dataset.title}</text></svg>`;
+    img.onerror = null;
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }, { once: true });
+  // jos virhe ehti tulla ennen kuuntelijaa
+  if (img.complete && img.naturalWidth === 0) img.dispatchEvent(new Event('error'));
+});
+
+
+
+const painikkeet = document.querySelectorAll('#suodattimet button');
+const kortit = document.querySelectorAll('#kuvat > [data-category]');
+painikkeet.forEach(btn => btn.addEventListener('click', () => {
+  const f = btn.dataset.filter;
+  painikkeet.forEach(b => {
+    const aktiivinen = b === btn;
+    b.classList.toggle('btn-primary', aktiivinen);
+    b.classList.toggle('btn-outline-secondary', !aktiivinen);
+    b.setAttribute('aria-pressed', aktiivinen);
   });
-  document.getElementById('tyhja').classList.toggle('d-none', n > 0);
+  kortit.forEach(k => k.classList.toggle('d-none', f !== 'kaikki' && k.dataset.category !== f));
 }));
 
 
-document.getElementById('kuva').addEventListener('show.bs.modal', e => {
-  const t = e.relatedTarget;
-  document.getElementById('kuvaOtsikko').textContent = t.querySelector('.ph, img')?.textContent.trim() || t.querySelector('img')?.alt || '';
-  const media = t.querySelector('.ph, img').cloneNode(true);
-  media.style.aspectRatio = '4/3';
-  const wrap = document.getElementById('kuvaSisalto');
-  wrap.replaceChildren(media);
-  const cap = t.querySelector('small'); if (cap) { const p = document.createElement('p'); p.className = 'text-body-secondary mt-2 mb-0'; p.textContent = cap.textContent; wrap.appendChild(p); }
-});
+
+const modalEl = document.getElementById('kuvaModal');
+const modal = new bootstrap.Modal(modalEl);
+document.querySelectorAll('.gallery-btn').forEach(btn => btn.addEventListener('click', () => {
+  const img = btn.querySelector('img');
+  document.getElementById('kuvaIso').src = img.src;
+  document.getElementById('kuvaIso').alt = img.alt;
+  document.getElementById('kuvaOtsikko').textContent = img.dataset.title;
+  document.getElementById('kuvaMeta').textContent = img.dataset.meta;
+  modal.show();
+}));
+
 </script>
 </body>
 </html>

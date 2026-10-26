@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kotkantien maalaus- ja tapetointi</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="Värientestaus.css" rel="stylesheet">
+<style>
+
+</style>
+<style id="smooth">
+ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+ @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+ #ylos { position: fixed; right: 1.25rem; bottom: 1.25rem; width: 48px; height: 48px; z-index: 1030; }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md border-bottom sticky-top bg-body">
+ <div class="container">
+  <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+   <span class="logo-box d-grid place-items-center text-center text-body-secondary"><img src="../kuvat/kotkantielogo.png" alt="Kotkantien maalaus- ja tapetointi" width="52" height="52"></span>
+   <span class="fs-6 lh-sm">Kotkantien maalaus- ja tapetointi<small class="d-block fw-normal text-body-secondary">Maalaus- ja tapetointityöt</small></span>
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Avaa valikko">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="menu">
+   <ul class="navbar-nav fw-semibold">
+    <li class="nav-item"><a class="nav-link" href="index.html">Etusivu</a></li>
+    <li class="nav-item"><a class="nav-link" href="Palvelut.html">Palvelut</a></li>
+    <li class="nav-item"><a class="nav-link" href="Galleria.html">Galleria</a></li>
+    <li class="nav-item"><a class="nav-link" href="Yhteystiedot.html">Yhteystiedot</a></li>
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="Värientestaus.html">Värientestaus</a></li>
+   </ul>
+  </div>
+ </div>
+</nav>
+
+<div class="container py-5">
+ <h1 class="display-5 fw-bold">Kotkantien maalaus- ja tapetointi</h1>
+ <p class="lead text-body-secondary mb-0" style="max-width:36rem">Tervetuloa Kotkantien maalaus- ja tapetointi värien ja tappettien testaus sivulle!</p>
+</div>
+
+<section class="container pb-5" id="varientestaus">
+ <h2 class="h3 fw-semibold">Värientestaus</h2>
+ <p class="text-body-secondary mb-4">Testaa eri värejä ennen maalausta.</p>
+
+<div id="varitesteri" class="my-4">
+  <div class="row g-4">
+    <!-- Huone -->
+    <div class="col-lg-7 col-xl-6">
+      <div class="room-wrap shadow-sm">
+        <svg viewBox="0 0 800 500" role="img" aria-label="Olohuone, jonka seinän väriä voi muuttaa">
+          <defs>
+            <linearGradient id="light" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#fff" stop-opacity=".28"/>
+              <stop offset=".55" stop-color="#fff" stop-opacity="0"/>
+              <stop offset="1" stop-color="#000" stop-opacity=".22"/>
+            </linearGradient>
+            <linearGradient id="floorG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#b98c5f"/>
+              <stop offset="1" stop-color="#9a7048"/>
+            </linearGradient>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#bfe0f5"/>
+              <stop offset="1" stop-color="#e8f4fb"/>
+            </linearGradient>
+          <linearGradient id="vBack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#327572"/><stop offset="1" stop-color="#1c4a49"/></linearGradient>
+            <linearGradient id="vCush" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a918e"/><stop offset="1" stop-color="#2c6a68"/></linearGradient>
+            <linearGradient id="vArmL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1f5251"/><stop offset=".45" stop-color="#327875"/><stop offset="1" stop-color="#236160"/></linearGradient>
+            <linearGradient id="vArmR" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2d716f"/><stop offset=".6" stop-color="#245f5d"/><stop offset="1" stop-color="#1a4847"/></linearGradient>
+            <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>
+            <linearGradient id="legW" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b57b45"/><stop offset="1" stop-color="#6e4524"/></linearGradient>
+            <radialGradient id="shadowG"><stop offset="0" stop-color="#000" stop-opacity=".38"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+          </defs>
+
+          <!-- Seinä -->
+          <rect id="wall" x="0" y="0" width="800" height="345"/>
+          <rect x="0" y="0" width="800" height="345" fill="url(#light)"/>
+
+          <!-- Lattia -->
+          <rect x="0" y="345" width="800" height="155" fill="url(#floorG)"/>
+          <g stroke="#7d5a38" stroke-opacity=".25" stroke-width="1.5">
+            <line x1="0" y1="385" x2="800" y2="385"/>
+            <line x1="0" y1="430" x2="800" y2="430"/>
+            <line x1="0" y1="480" x2="800" y2="480"/>
+          </g>
+          <!-- Jalkalista -->
+          <rect id="board" x="0" y="333" width="800" height="14" fill="#fbfaf7"/>
+          <rect x="0" y="345" width="800" height="5" fill="#000" opacity=".12"/>
+
+          <!-- Ikkuna -->
+          <g>
+            <rect x="105" y="62" width="190" height="200" fill="#fbfaf7"/>
+            <rect x="117" y="74" width="166" height="176" fill="url(#sky)"/>
+            <rect x="196" y="74" width="8" height="176" fill="#fbfaf7"/>
+            <rect x="117" y="158" width="166" height="8" fill="#fbfaf7"/>
+            <rect x="95" y="260" width="210" height="10" fill="#fbfaf7"/>
+            <!-- valonsäde lattialle -->
+            <polygon points="120,350 300,350 420,500 200,500" fill="#fff" opacity=".13"/>
+          </g>
+
+          <!-- Taulu -->
+          <g>
+            <clipPath id="artclip"><rect x="474" y="98" width="152" height="89"/></clipPath>
+            <rect x="454" y="81" width="200" height="135" fill="#000" opacity=".14"/>
+            <rect x="450" y="75" width="200" height="135" fill="#7a5a3a"/>
+            <rect x="458" y="83" width="184" height="119" fill="#f6f1e6"/>
+            <rect x="474" y="98" width="152" height="89" fill="#e9dcc3"/>
+            <g clip-path="url(#artclip)">
+              <circle cx="590" cy="124" r="21" fill="#d9803f"/>
+              <path d="M488 190 V150 a30 30 0 0 1 60 0 V190 Z" fill="#2f6b6a"/>
+              <path d="M548 190 V163 a21 21 0 0 1 42 0 V190 Z" fill="#b5533c"/>
+              <path d="M590 190 V172 a18 18 0 0 1 36 0 V190 Z" fill="#d9a441"/>
+              <path d="M474 168 q19 -12 38 0 t38 0 t38 0 t38 0" fill="none" stroke="#f6f1e6" stroke-width="3" opacity=".8"/>
+              <rect x="474" y="176" width="152" height="11" fill="#3c4a3f"/>
+              <circle cx="510" cy="116" r="3" fill="#3c4a3f"/><circle cx="522" cy="108" r="2" fill="#3c4a3f"/>
+            </g>
+            <!-- pieni kehys -->
+            <rect x="676" y="98" width="62" height="80" fill="#000" opacity=".14"/>
+            <rect x="672" y="92" width="62" height="80" fill="#2b2b2b"/>
+            <rect x="678" y="98" width="50" height="68" fill="#f6f1e6"/>
+            <path d="M703 160 C703 140 702 125 703 108" stroke="#4f7a4d" stroke-width="2" fill="none"/>
+            <ellipse cx="695" cy="124" rx="9" ry="4.5" transform="rotate(-35 695 124)" fill="#5e8f5a"/>
+            <ellipse cx="711" cy="119" rx="9" ry="4.5" transform="rotate(35 711 119)" fill="#4f7a4d"/>
+            <ellipse cx="696" cy="142" rx="9" ry="4.5" transform="rotate(-35 696 142)" fill="#4f7a4d"/>
+            <ellipse cx="711" cy="137" rx="9" ry="4.5" transform="rotate(35 711 137)" fill="#5e8f5a"/>
+            <circle cx="703" cy="106" r="4" fill="#b5533c"/>
+          </g>
+
+          <!-- Sivupöytä ja lamppu -->
+          <rect x="672" y="268" width="80" height="8" fill="#6b4a2d"/>
+          <rect x="680" y="276" width="6" height="72" fill="#6b4a2d"/>
+          <rect x="738" y="276" width="6" height="72" fill="#6b4a2d"/>
+          <rect x="709" y="228" width="6" height="40" fill="#444"/>
+          <polygon points="684,228 740,228 726,184 698,184" fill="#f2d79a"/>
+
+          <!-- Matto -->
+          <g>
+            <polygon points="190,415 610,415 690,485 110,485" fill="#efe6d4"/>
+            <polygon points="215,423 585,423 655,477 145,477" fill="none" stroke="#b5533c" stroke-width="6"/>
+            <polygon points="228,430 572,430 636,472 164,472" fill="none" stroke="#2f6b6a" stroke-width="2"/>
+            <g>
+              <polygon points="176,450 202,442 228,450 202,458" fill="#b5533c"/>
+              <polygon points="242,450 268,442 294,450 268,458" fill="#2f6b6a"/>
+              <polygon points="308,450 334,442 360,450 334,458" fill="#d9a441"/>
+              <polygon points="374,450 400,442 426,450 400,458" fill="#b5533c"/>
+              <polygon points="440,450 466,442 492,450 466,458" fill="#d9a441"/>
+              <polygon points="506,450 532,442 558,450 532,458" fill="#2f6b6a"/>
+              <polygon points="572,450 598,442 624,450 598,458" fill="#b5533c"/>
+            </g>
+            <line x1="232" y1="433" x2="568" y2="433" stroke="#d9a441" stroke-width="2" stroke-dasharray="6 5"/>
+            <line x1="176" y1="468" x2="624" y2="468" stroke="#d9a441" stroke-width="2" stroke-dasharray="6 5"/>
+            <g stroke="#cdbf9f" stroke-width="2">
+              <path d="M196 411v4M208 411v4M220 411v4M232 411v4M244 411v4M256 411v4M268 411v4M280 411v4M292 411v4M304 411v4M316 411v4M328 411v4M340 411v4M352 411v4M364 411v4M376 411v4M388 411v4M400 411v4M412 411v4M424 411v4M436 411v4M448 411v4M460 411v4M472 411v4M484 411v4M496 411v4M508 411v4M520 411v4M532 411v4M544 411v4M556 411v4M568 411v4M580 411v4M592 411v4M604 411v4"/>
+              <path d="M118 485v5M132 485v5M146 485v5M160 485v5M174 485v5M188 485v5M202 485v5M216 485v5M230 485v5M244 485v5M258 485v5M272 485v5M286 485v5M300 485v5M314 485v5M328 485v5M342 485v5M356 485v5M370 485v5M384 485v5M398 485v5M412 485v5M426 485v5M440 485v5M454 485v5M468 485v5M482 485v5M496 485v5M510 485v5M524 485v5M538 485v5M552 485v5M566 485v5M580 485v5M594 485v5M608 485v5M622 485v5M636 485v5M650 485v5M664 485v5M678 485v5"/>
+            </g>
+          </g>
+
+          <!-- Sohva -->
+          <g>
+            <ellipse cx="400" cy="431" rx="275" ry="14" fill="url(#shadowG)"/>
+            <!-- jalat -->
+            <polygon points="184,392 212,392 204,430 195,430" fill="url(#legW)"/>
+            <polygon points="588,392 616,392 608,430 599,430" fill="url(#legW)"/>
+            <rect x="195" y="428" width="9" height="3" rx="1" fill="#c9a24a"/>
+            <rect x="599" y="428" width="9" height="3" rx="1" fill="#c9a24a"/>
+            <!-- selkä -->
+            <path d="M165 294 Q165 258 202 258 H598 Q635 258 635 294 V394 H165 Z" fill="url(#vBack)"/>
+            <rect x="192" y="268" width="204" height="86" rx="22" fill="url(#vCush)"/>
+            <rect x="404" y="268" width="204" height="86" rx="22" fill="url(#vCush)"/>
+            <rect x="198" y="274" width="192" height="74" rx="17" fill="none" stroke="#6bb3b0" stroke-width="1.4" opacity=".45"/>
+            <rect x="410" y="274" width="192" height="74" rx="17" fill="none" stroke="#6bb3b0" stroke-width="1.4" opacity=".45"/>
+            <circle cx="240" cy="312" r="3.2" fill="#163f3e"/><path d="M240 312l-13 -9M240 312l13 -9M240 312l-13 9M240 312l13 9" stroke="#0f3130" stroke-width="1.2" opacity=".35" fill="none"/><circle cx="294" cy="312" r="3.2" fill="#163f3e"/><path d="M294 312l-13 -9M294 312l13 -9M294 312l-13 9M294 312l13 9" stroke="#0f3130" stroke-width="1.2" opacity=".35" fill="none"/><circle cx="348" cy="312" r="3.2" fill="#163f3e"/><path d="M348 312l-13 -9M348 312l13 -9M348 312l-13 9M348 312l13 9" stroke="#0f3130" stroke-width="1.2" opacity=".35" fill="none"/>
+            <circle cx="452" cy="312" r="3.2" fill="#163f3e"/><path d="M452 312l-13 -9M452 312l13 -9M452 312l-13 9M452 312l13 9" stroke="#0f3130" stroke-width="1.2" opacity=".35" fill="none"/><circle cx="506" cy="312" r="3.2" fill="#163f3e"/><path d="M506 312l-13 -9M506 312l13 -9M506 312l-13 9M506 312l13 9" stroke="#0f3130" stroke-width="1.2" opacity=".35" fill="none"/><circle cx="560" cy="312" r="3.2" fill="#163f3e"/><path d="M560 312l-13 -9M560 312l13 -9M560 312l-13 9M560 312l13 9" stroke="#0f3130" stroke-width="1.2" opacity=".35" fill="none"/>
+            <rect x="396" y="272" width="8" height="82" fill="#102f2e" opacity=".55"/>
+            <!-- istuinosa -->
+            <rect x="165" y="352" width="470" height="42" rx="12" fill="#1c4a49"/>
+            <rect x="186" y="338" width="210" height="48" rx="13" fill="url(#vCush)"/>
+            <rect x="404" y="338" width="210" height="48" rx="13" fill="url(#vCush)"/>
+            <rect x="192" y="341" width="198" height="7" rx="3.5" fill="#fff" opacity=".2"/>
+            <rect x="410" y="341" width="198" height="7" rx="3.5" fill="#fff" opacity=".2"/>
+            <path d="M194 378 H388 M412 378 H606" stroke="#6bb3b0" stroke-width="1.5" opacity=".45"/>
+            <rect x="396" y="344" width="8" height="42" fill="#102f2e" opacity=".6"/>
+            <!-- käsinojat -->
+            <rect x="184" y="338" width="8" height="48" fill="#000" opacity=".2"/>
+            <rect x="608" y="338" width="8" height="48" fill="#000" opacity=".2"/>
+            <rect x="136" y="296" width="56" height="102" rx="27" fill="url(#vArmL)"/>
+            <rect x="608" y="296" width="56" height="102" rx="27" fill="url(#vArmR)"/>
+            <rect x="145" y="302" width="12" height="64" rx="6" fill="#fff" opacity=".16"/>
+            <rect x="617" y="302" width="10" height="60" rx="5" fill="#fff" opacity=".1"/>
+            <!-- torkkupeitto -->
+            <path d="M610 298 q27 -7 44 17 l8 76 q-27 9 -54 0 z" fill="#b5533c"/>
+            <path d="M614 330 h46 M616 346 h46 M618 362 h44 M620 378 h42" stroke="#d9a441" stroke-width="3"/>
+            <path d="M628 302 q4 40 -2 88" stroke="#000" stroke-width="3" opacity=".15" fill="none"/>
+            <path d="M614 391v8M621 391v8M628 391v8M635 391v8M642 391v8M649 391v8M656 391v8" stroke="#9a4330" stroke-width="2"/>
+            <!-- tyynyt -->
+            <ellipse cx="247" cy="352" rx="38" ry="5" fill="#000" opacity=".18"/>
+            <g transform="rotate(-8 247 318)">
+              <rect x="215" y="287" width="64" height="62" rx="11" fill="#d9a441"/>
+              <rect x="215" y="287" width="64" height="62" rx="11" fill="url(#shine)"/>
+              <path d="M219 292l11 9M275 292l-11 9M219 344l11 -9M275 344l-11 -9" stroke="#a97a1f" stroke-width="1.5" opacity=".6"/>
+              <path d="M222 289h50" stroke="#b9852a" stroke-width="1.5" stroke-dasharray="4 3"/>
+            </g>
+            <g transform="rotate(7 318 328)">
+              <rect x="296" y="302" width="44" height="52" rx="17" fill="#b5533c"/>
+              <rect x="296" y="302" width="44" height="52" rx="17" fill="url(#shine)"/>
+              <path d="M302 314 Q318 310 334 314" stroke="#8d3f2c" stroke-width="1.5" fill="none" opacity=".6"/>
+            </g>
+            <ellipse cx="553" cy="354" rx="36" ry="5" fill="#000" opacity=".18"/>
+            <g transform="rotate(4 553 322)">
+              <rect x="520" y="292" width="66" height="58" rx="11" fill="#f0e9da"/>
+              <path d="M533 292v58M546 292v58M559 292v58M572 292v58" stroke="#2f6b6a" stroke-width="3" opacity=".75"/>
+              <rect x="520" y="292" width="66" height="58" rx="11" fill="url(#shine)"/>
+              <path d="M524 297l10 8M582 297l-10 8" stroke="#8e8574" stroke-width="1.4" opacity=".6"/>
+            </g>
+          </g>
+
+          <!-- Kasvi -->
+          <g>
+            <defs>
+              <linearGradient id="leafG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#78b872"/><stop offset="1" stop-color="#2f6339"/></linearGradient>
+              <linearGradient id="leafG2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a9c5c"/><stop offset="1" stop-color="#244f31"/></linearGradient>
+              <linearGradient id="potG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f6eedf"/><stop offset=".55" stop-color="#e4d8c1"/><stop offset="1" stop-color="#bfb094"/></linearGradient>
+              <g id="leaf">
+                <path d="M0 0 C-8 6 -26 4 -30 -14 C-34 -34 -18 -54 0 -62 C18 -54 34 -34 30 -14 C26 4 8 6 0 0 Z M-17 -22 a2.5 6 0 1 0 5 0 a2.5 6 0 1 0 -5 0 Z M12 -22 a2.5 6 0 1 0 5 0 a2.5 6 0 1 0 -5 0 Z M-15.5 -40 a2.5 6 0 1 0 5 0 a2.5 6 0 1 0 -5 0 Z M10.5 -40 a2.5 6 0 1 0 5 0 a2.5 6 0 1 0 -5 0 Z" fill-rule="evenodd"/>
+                <path d="M0 -2 V-58 M0 -31 L-22 -33 M0 -31 L22 -33 M0 -10 L-18 -14 M0 -10 L18 -14 M0 -51 L-10 -55 M0 -51 L10 -55" stroke="#1d4a2a" stroke-width="1.2" opacity=".45" fill="none"/>
+              </g>
+            </defs>
+            <ellipse cx="60" cy="473" rx="48" ry="8" fill="url(#shadowG)"/>
+            <path d="M60 402 C58 380 48 355 42 330" fill="none" stroke="#3f6b3f" stroke-width="3" stroke-linecap="round"/><path d="M60 402 C64 370 72 335 78 310" fill="none" stroke="#3f6b3f" stroke-width="3" stroke-linecap="round"/><path d="M60 402 C58 360 62 320 58 285" fill="none" stroke="#3f6b3f" stroke-width="3" stroke-linecap="round"/><path d="M60 402 C56 390 52 380 50 372" fill="none" stroke="#3f6b3f" stroke-width="3" stroke-linecap="round"/><path d="M60 402 C68 392 78 378 84 365" fill="none" stroke="#3f6b3f" stroke-width="3" stroke-linecap="round"/><path d="M60 402 C64 380 68 360 70 345" fill="none" stroke="#3f6b3f" stroke-width="3" stroke-linecap="round"/>
+            <use href="#leaf" fill="url(#leafG2)" transform="translate(70 345) rotate(8) scale(.7)"/>
+            <use href="#leaf" fill="url(#leafG2)" transform="translate(50 372) rotate(-55) scale(.75)"/>
+            <use href="#leaf" fill="url(#leafG2)" transform="translate(84 365) rotate(50) scale(.75)"/>
+            <use href="#leaf" fill="url(#leafG)" transform="translate(58 285) rotate(-5) scale(1.1)"/>
+            <use href="#leaf" fill="url(#leafG)" transform="translate(42 330) rotate(-35) scale(1)"/>
+            <use href="#leaf" fill="url(#leafG)" transform="translate(78 310) rotate(25) scale(1.05)"/>
+            <!-- ruukku -->
+            <ellipse cx="60" cy="469" rx="41" ry="6" fill="#a89a7e"/>
+            <path d="M26 400 H94 L86 466 Q86 470 82 470 H38 Q34 470 34 466 Z" fill="url(#potG)"/>
+            <path d="M32.0 405 L37.0 466 M40.0 405 L43.6 466 M48.0 405 L50.1 466 M56.0 405 L56.7 466 M64.0 405 L63.3 466 M72.0 405 L69.8 466 M80.0 405 L76.4 466 M88.0 405 L83.0 466 " stroke="#8a7a5c" stroke-width="1" opacity=".3" fill="none"/>
+            <path d="M28.5 416 H91.5" stroke="#b5533c" stroke-width="4" opacity=".85"/>
+            <path d="M30 424 H90" stroke="#d9a441" stroke-width="1.5" opacity=".9"/>
+            <ellipse cx="60" cy="400" rx="36" ry="7" fill="#d2c5ab"/>
+            <ellipse cx="60" cy="401" rx="31" ry="5" fill="#3b2a20"/>
+            <circle cx="46" cy="400" r="1.6" fill="#8a7a6a"/><circle cx="66" cy="402" r="1.4" fill="#8a7a6a"/><circle cx="76" cy="400" r="1.8" fill="#9b8c7c"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Hallinta -->
+    <div class="col-lg-5 col-xl-5">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="btn-group w-100 mb-3" role="group" aria-label="Väritettävä kohde">
+            <input type="radio" class="btn-check" name="kohde" id="kohdeSeina" value="wall" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="kohdeSeina">Seinä</label>
+            <input type="radio" class="btn-check" name="kohde" id="kohdeLista" value="board" autocomplete="off">
+            <label class="btn btn-outline-primary" for="kohdeLista">Jalkalista</label>
+          </div>
+
+          <h2 class="h6 mb-3">Valitse väri</h2>
+
+          <div class="d-flex flex-wrap gap-2 mb-4" id="swatches" role="group" aria-label="Värivalmiit"></div>
+
+          <label class="form-label small text-body-secondary" for="picker">Oma väri</label>
+          <div class="d-flex gap-2 mb-3">
+            <input type="color" class="form-control form-control-color" id="picker" value="#f0ead6" title="Valitse väri">
+            <input type="text" class="form-control" id="hex" value="#f0ead6" maxlength="7" spellcheck="false" aria-label="Heksakoodi">
+          </div>
+          <div class="text-danger small mb-2" id="err" style="display:none!important"></div>
+
+          <label class="form-label small text-body-secondary" for="lightness">Vaaleus</label>
+          <input type="range" class="form-range mb-3" id="lightness" min="-30" max="30" value="0">
+
+          <div class="chip mb-3" id="chip" style="height:72px;border-radius:.5rem"></div>
+
+          <dl class="row small mb-3">
+            <dt class="col-4">Kohde</dt><dd class="col-8 mb-1" id="outTarget">-</dd>
+            <dt class="col-4">Nimi</dt><dd class="col-8 mb-1" id="name">-</dd>
+            <dt class="col-4">Hex</dt><dd class="col-8 mb-1" id="outHex">-</dd>
+            <dt class="col-4">RGB</dt><dd class="col-8 mb-1" id="outRgb">-</dd>
+            <dt class="col-4">HSL</dt><dd class="col-8 mb-1" id="outHsl">-</dd>
+            <dt class="col-4">Yhdistelmä</dt><dd class="col-8 mb-0" id="outBoth">-</dd>
+          </dl>
+
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" id="copy" type="button">Kopioi värikoodi</button>
+            <button class="btn btn-outline-secondary" id="reset" type="button">Palauta alkuperäinen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer class="py-4 border-top text-body-secondary small">
+ <div class="container">© 2026 Kotkantien maalaus- ja tapetointi</div>
+</footer>
+
+<button type="button" id="ylos" class="btn btn-primary rounded-circle shadow d-none" aria-label="Takaisin ylös">&uarr;</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/teema.js"></script>
+<script src="../js/varitesteri.js"></script>
+<script src="../js/smooth-scroll.js"></script>
+</body>
+</html>

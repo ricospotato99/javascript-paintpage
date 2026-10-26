@@ -81,4 +81,4 @@ Sivu avautuu osoitteeseen `http://127.0.0.1:8080`, ja se päivittyy automaattise
 
 ## Tekijä
 
-Lisää tähän nimesi ja tiedot.
+Rico viitavaara

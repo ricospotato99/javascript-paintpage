@@ -7,7 +7,19 @@
 }
 
 body {
-    line-height: 1.65
+    line-height: 1.65;
+}
+a {
+    font-size: 12px;
+}
+h1 {
+    font-size: 24px;
+}
+h2 {
+    font-size: 16px;
+}
+h3 {
+    font-size: 14px;
 }
 
 h1,
@@ -16,6 +28,7 @@ h3,
 .navbar-brand {
     font-weight: 800;
     letter-spacing: -.01em
+
 }
 
 .btn-primary {

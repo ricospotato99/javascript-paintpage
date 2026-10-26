@@ -6,13 +6,18 @@
 <title>Kotkantien maalaus- ja tapetointi</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="Värientestaus.css" rel="stylesheet">
+<style id="smooth">
+ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+ @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+ #ylos { position: fixed; right: 1.25rem; bottom: 1.25rem; width: 48px; height: 48px; z-index: 1030; }
+</style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md border-bottom">
+<nav class="navbar navbar-expand-md border-bottom sticky-top bg-body">
  <div class="container">
-  <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-   <span class="logo-box d-grid place-items-center text-center text-body-secondary"><img src="../kuvat/kotkatielogo.png" alt="Kotkantien maalaus- ja tapetointi" width="52" height="52"></span>
+  <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+   <span class="logo-box d-grid place-items-center text-center text-body-secondary"><img src="c:\Users\s5viri00\java script loppytyö\javascript-paintpage\kuvat\kotkatie kuva.png" alt="Kotkantien maalaus- ja tapetointi" width="52" height="52"></span>
    <span class="fs-6 lh-sm">Kotkantien maalaus- ja tapetointi<small class="d-block fw-normal text-body-secondary">Maalaus- ja tapetointityöt</small></span>
   </a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Avaa valikko">
@@ -20,11 +25,11 @@
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="menu">
    <ul class="navbar-nav fw-semibold">
-    <li class="nav-item"><a class="nav-link" href="index.html">Etusivu</a></li>
-    <li class="nav-item"><a class="nav-link" href="Palvelut.html">Palvelut</a></li>
-    <li class="nav-item"><a class="nav-link" href="Galleria.html">Galleria</a></li>
-    <li class="nav-item"><a class="nav-link" href="Yhteystiedot.html">Yhteystiedot</a></li>
-    <li class="nav-item"><a class="nav-link active" aria-current="page" href="Värientestaus.html">Värientestaus</a></li>
+    <li class="nav-item"><a class="nav-link" href="c:\Users\s5viri00\java script loppytyö\javascript-paintpage\html\index.html">Etusivu</a></li>
+    <li class="nav-item"><a class="nav-link" href="c:\Users\s5viri00\java script loppytyö\javascript-paintpage\html\Palvelut.html">Palvelut</a></li>
+    <li class="nav-item"><a class="nav-link" href="c:\Users\s5viri00\java script loppytyö\javascript-paintpage\html\Galleria.html">Galleria</a></li>
+    <li class="nav-item"><a class="nav-link" href="c:\Users\s5viri00\java script loppytyö\javascript-paintpage\html\Yhteystiedot.html">Yhteystiedot</a></li>
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="c:\Users\s5viri00\java script loppytyö\javascript-paintpage\html\Värientestaus.html">Värientestaus</a></li>
    </ul>
   </div>
  </div>
@@ -80,7 +85,7 @@
             <line x1="0" y1="480" x2="800" y2="480"/>
           </g>
           <!-- Jalkalista -->
-          <rect x="0" y="333" width="800" height="14" fill="#fbfaf7"/>
+          <rect id="board" x="0" y="333" width="800" height="14" fill="#fbfaf7"/>
           <rect x="0" y="345" width="800" height="5" fill="#000" opacity=".12"/>
 
           <!-- Ikkuna -->
@@ -247,14 +252,21 @@
     <div class="col-lg-5 col-xl-5">
       <div class="card shadow-sm">
         <div class="card-body">
+          <div class="btn-group w-100 mb-3" role="group" aria-label="Väritettävä kohde">
+            <input type="radio" class="btn-check" name="kohde" id="kohdeSeina" value="wall" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="kohdeSeina">Seinä</label>
+            <input type="radio" class="btn-check" name="kohde" id="kohdeLista" value="board" autocomplete="off">
+            <label class="btn btn-outline-primary" for="kohdeLista">Jalkalista</label>
+          </div>
+
           <h2 class="h6 mb-3">Valitse väri</h2>
 
           <div class="d-flex flex-wrap gap-2 mb-4" id="swatches" role="group" aria-label="Värivalmiit"></div>
 
           <label class="form-label small text-body-secondary" for="picker">Oma väri</label>
           <div class="d-flex gap-2 mb-3">
-            <input type="color" class="form-control form-control-color" id="picker" value="#cfd8d0" title="Valitse väri">
-            <input type="text" class="form-control" id="hex" value="#cfd8d0" maxlength="7" spellcheck="false" aria-label="Heksakoodi">
+            <input type="color" class="form-control form-control-color" id="picker" value="#f0ead6" title="Valitse väri">
+            <input type="text" class="form-control" id="hex" value="#f0ead6" maxlength="7" spellcheck="false" aria-label="Heksakoodi">
           </div>
           <div class="text-danger small mb-2" id="err" style="display:none!important"></div>
 
@@ -264,10 +276,12 @@
           <div class="chip mb-3" id="chip" style="height:72px;border-radius:.5rem"></div>
 
           <dl class="row small mb-3">
+            <dt class="col-4">Kohde</dt><dd class="col-8 mb-1" id="outTarget">–</dd>
             <dt class="col-4">Nimi</dt><dd class="col-8 mb-1" id="name">–</dd>
             <dt class="col-4">Hex</dt><dd class="col-8 mb-1" id="outHex">–</dd>
             <dt class="col-4">RGB</dt><dd class="col-8 mb-1" id="outRgb">–</dd>
-            <dt class="col-4">HSL</dt><dd class="col-8 mb-0" id="outHsl">–</dd>
+            <dt class="col-4">HSL</dt><dd class="col-8 mb-1" id="outHsl">–</dd>
+            <dt class="col-4">Yhdistelmä</dt><dd class="col-8 mb-0" id="outBoth">–</dd>
           </dl>
 
           <div class="d-grid gap-2">
@@ -315,7 +329,7 @@ if (form) {
   // Lisää tyylit suoraan skriptistä, jotta testeri toimii vaikka CSS jäisi liittämättä
   if (!document.getElementById('varitesteri-css')) {
     const st = document.createElement('style'); st.id = 'varitesteri-css';
-    st.textContent = `  #varitesteri { --wall: #cfd8d0; --tester-max: 1100px; --room-max: 640px; max-width: var(--tester-max); }
+    st.textContent = `  #varitesteri { --wall: #f0ead6; --tester-max: 1100px; --room-max: 640px; max-width: var(--tester-max); }
   #varitesteri .room-wrap { max-width: var(--room-max); border-radius: .75rem; overflow: hidden; background: var(--bs-tertiary-bg); border: 1px solid var(--bs-border-color); }
   #varitesteri .room-wrap svg { display: block; width: 100%; height: auto; }
   #varitesteri #wall { fill: var(--wall); transition: fill .25s ease; }
@@ -328,27 +342,39 @@ if (form) {
     document.head.appendChild(st);
   }
   const PRESETS = [
-    { name: 'Salvia',        hex: '#cfd8d0' },
-    { name: 'Lämmin valkoinen', hex: '#f1ede4' },
-    { name: 'Hiekka',        hex: '#dccdb4' },
-    { name: 'Vaaleanpunainen savi', hex: '#e3c3b8' },
-    { name: 'Terrakotta',    hex: '#c9805e' },
-    { name: 'Siniharmaa',    hex: '#a9bccb' },
-    { name: 'Yönsininen',    hex: '#2f4a68' },
-    { name: 'Metsänvihreä',  hex: '#3f5f4b' },
-    { name: 'Sinapinkeltainen', hex: '#d8a932' },
-    { name: 'Viininpunainen', hex: '#7a2e3b' },
-    { name: 'Grafiitti',     hex: '#4a4e53' },
-    { name: 'Laventeli',     hex: '#b9a9cf' }
+    { name: 'Fiesta', hex: '#dd4132' },
+    { name: 'Jester Red', hex: '#9e1030' },
+    { name: 'Turmeric', hex: '#fe840e' },
+    { name: 'Living Coral', hex: '#ff6f61' },
+    { name: 'Pink Peacock', hex: '#c62168' },
+    { name: 'Pepper Stem', hex: '#8d9440' },
+    { name: 'Aspen Gold', hex: '#ffd662' },
+    { name: 'Princess Blue', hex: '#00539c' },
+    { name: 'Toffee', hex: '#755139' },
+    { name: 'Mango Mojito', hex: '#d69c2f' },
+    { name: 'Terrarium Moss', hex: '#616247' },
+    { name: 'Sweet Lilac', hex: '#e8b5ce' },
+    { name: 'Soybean', hex: '#d2c29d' },
+    { name: 'Eclipse', hex: '#343148' },
+    { name: 'Sweet Corn', hex: '#f0ead6' },
+    { name: 'Brown Granite', hex: '#615550' }
   ];
-  const ORIGINAL = PRESETS[0].hex;
+  const DEFAULTS = {
+    wall:  { base: '#f0ead6', name: 'Sweet Corn', adj: 0 },
+    board: { base: '#fbfaf7', name: 'Valkoinen', adj: 0 }
+  };
+  const LABELS = { wall: 'Seinä', board: 'Jalkalista' };
 
   const $ = id => document.getElementById(id);
   const root = document.getElementById('varitesteri') || document.documentElement;
   const wallEl = document.getElementById('wall');
+  const boardEl = document.getElementById('board');
+  if (boardEl) boardEl.style.transition = 'fill .25s ease';
   const picker = $('picker'), hexIn = $('hex'), light = $('lightness'), err = $('err');
-  let base = ORIGINAL;           // valittu väri ilman vaaleussäätöä
-  let currentName = PRESETS[0].name;
+
+  // Kummallekin kohteelle (seinä, jalkalista) oma väri
+  const state = { wall: { ...DEFAULTS.wall }, board: { ...DEFAULTS.board } };
+  let target = 'wall';
 
   // --- apufunktiot ---
   const hexToRgb = h => { const n = parseInt(h.slice(1), 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; };
@@ -369,6 +395,11 @@ if (form) {
     return rgbToHex(f(0) * 255, f(8) * 255, f(4) * 255);
   }
   const validHex = v => /^#[0-9a-f]{6}$/i.test(v);
+  const finalColor = st => {
+    if (st.adj === 0) return st.base;
+    const [h, s, l] = rgbToHsl(...hexToRgb(st.base));
+    return hslToHex(h, s, Math.max(0, Math.min(100, l + st.adj)));
+  };
 
   // --- värivalmiit ---
   const sw = $('swatches');
@@ -377,41 +408,55 @@ if (form) {
     b.type = 'button'; b.className = 'swatch';
     b.style.cssText = 'width:44px;height:44px;border-radius:50%;padding:0;cursor:pointer;border:3px solid var(--bs-body-bg,#fff);background:' + p.hex;
     b.title = p.name; b.setAttribute('aria-label', p.name); b.dataset.hex = p.hex;
-    b.addEventListener('click', () => { currentName = p.name; light.value = 0; setBase(p.hex); });
+    b.addEventListener('click', () => {
+      const st = state[target];
+      st.name = p.name; st.adj = 0; st.base = p.hex.toLowerCase();
+      light.value = 0; apply();
+    });
     sw.appendChild(b);
   });
 
-  // --- päivitys ---
+ 
   function apply() {
-    const [h, s, l] = rgbToHsl(...hexToRgb(base));
-    const L = Math.max(0, Math.min(100, l + Number(light.value)));
-    const final = Number(light.value) === 0 ? base : hslToHex(h, s, L);
-    const [r, g, b] = hexToRgb(final);
-    const [fh, fs, fl] = rgbToHsl(r, g, b);
+    const w = finalColor(state.wall), bd = finalColor(state.board);
+    root.style.setProperty('--wall', w);
+    if (wallEl) { wallEl.style.fill = w; wallEl.setAttribute('fill', w); }
+    if (boardEl) { boardEl.style.fill = bd; boardEl.setAttribute('fill', bd); }
 
-    root.style.setProperty('--wall', final);
-    if (wallEl) { wallEl.style.fill = final; wallEl.setAttribute('fill', final); }
-    $('chip').style.background = final;
-    picker.value = base;
-    if (document.activeElement !== hexIn) hexIn.value = base;
-    $('name').textContent = currentName;
-    $('outHex').textContent = final.toUpperCase();
+    const st = state[target], fin = target === 'wall' ? w : bd;
+    const [r, g, b] = hexToRgb(fin);
+    const [fh, fs, fl] = rgbToHsl(r, g, b);
+    $('chip').style.background = fin;
+    picker.value = st.base;
+    if (document.activeElement !== hexIn) hexIn.value = st.base;
+    $('outTarget').textContent = LABELS[target];
+    $('name').textContent = st.name;
+    $('outHex').textContent = fin.toUpperCase();
     $('outRgb').textContent = `${r}, ${g}, ${b}`;
     $('outHsl').textContent = `${fh}°, ${fs} %, ${fl} %`;
+    $('outBoth').textContent = `Seinä ${w.toUpperCase()}, jalkalista ${bd.toUpperCase()}`;
     root.querySelectorAll('.swatch').forEach(el =>
-      el.classList.toggle('active', el.dataset.hex.toLowerCase() === base.toLowerCase() && Number(light.value) === 0));
+      el.classList.toggle('active', el.dataset.hex.toLowerCase() === st.base && st.adj === 0));
   }
-  function setBase(hex) { base = hex.toLowerCase(); apply(); }
 
-  picker.addEventListener('input', () => { currentName = 'Oma väri'; setBase(picker.value); });
+  // --- kohteen valinta (seinä / jalkalista) ---
+  root.querySelectorAll('input[name="kohde"]').forEach(r => r.addEventListener('change', () => {
+    if (!r.checked) return;
+    target = r.value;
+    light.value = state[target].adj;
+    err.style.setProperty('display', 'none', 'important');
+    apply();
+  }));
+
+  picker.addEventListener('input', () => { const st = state[target]; st.name = 'Oma väri'; st.base = picker.value.toLowerCase(); apply(); });
   hexIn.addEventListener('input', () => {
     let v = hexIn.value.trim(); if (v && v[0] !== '#') v = '#' + v;
-    if (validHex(v)) { err.style.setProperty('display', 'none', 'important'); currentName = 'Oma väri'; setBase(v); }
+    if (validHex(v)) { err.style.setProperty('display', 'none', 'important'); const st = state[target]; st.name = 'Oma väri'; st.base = v.toLowerCase(); apply(); }
     else { err.textContent = 'Anna väri muodossa #rrggbb.'; err.style.setProperty('display', 'block', 'important'); }
   });
-  hexIn.addEventListener('blur', () => { err.style.setProperty('display', 'none', 'important'); hexIn.value = base; });
-  light.addEventListener('input', apply);
-  $('reset').addEventListener('click', () => { currentName = PRESETS[0].name; light.value = 0; setBase(ORIGINAL); });
+  hexIn.addEventListener('blur', () => { err.style.setProperty('display', 'none', 'important'); hexIn.value = state[target].base; });
+  light.addEventListener('input', () => { state[target].adj = Number(light.value); apply(); });
+  $('reset').addEventListener('click', () => { state[target] = { ...DEFAULTS[target] }; light.value = 0; apply(); });
   $('copy').addEventListener('click', async e => {
     const btn = e.currentTarget, txt = $('outHex').textContent;
     try { await navigator.clipboard.writeText(txt); btn.textContent = 'Kopioitu ' + txt; }
@@ -422,5 +467,6 @@ if (form) {
   apply();
 })();
 </script>
+
 </body>
 </html>

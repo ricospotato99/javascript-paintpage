@@ -37,7 +37,7 @@ h3,
 }
 
 #varitesteri {
-    --wall: #cfd8d0;
+    --wall: #f0ead6;
     --tester-max: 1100px;
     --room-max: 640px;
     max-width: var(--tester-max);

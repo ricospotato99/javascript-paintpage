@@ -12,10 +12,15 @@
  .gallery-btn:focus-visible { outline: 3px solid var(--bs-primary); outline-offset: -3px; }
  .gallery-card .ratio { overflow: hidden; }
 </style>
+<style id="smooth">
+ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+ @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+ #ylos { position: fixed; right: 1.25rem; bottom: 1.25rem; width: 48px; height: 48px; z-index: 1030; }
+</style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md border-bottom">
+<nav class="navbar navbar-expand-md border-bottom sticky-top bg-body">
  <div class="container">
   <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
    <span class="logo-box d-grid place-items-center text-center text-body-secondary"><img src="../kuvat/kotkatielogo.png" alt="Kotkantien maalaus- ja tapetointi" width="52" height="52"></span>
@@ -55,7 +60,7 @@
   <div class="col-md-6 col-lg-4" data-category="sisamaalaus">
    <div class="card h-100 gallery-card">
     <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Olohuoneen seinät">
-     <div class="ratio ratio-4x3"><img src="../kuvat/olohuoneen maalaus.webp" alt="Olohuoneen seinät" data-title="Olohuoneen seinät" data-meta="Sisämaalaus · Oulu"></div>
+     <div class="ratio ratio-4x3"><img src="../kuvat/galleria1.jpg" alt="Olohuoneen seinät" data-title="Olohuoneen seinät" data-meta="Sisämaalaus · Oulu"></div>
     </button>
     <div class="card-body">
      <h2 class="h6 fw-semibold mb-1">Olohuoneen seinät</h2>
@@ -67,7 +72,7 @@
   <div class="col-md-6 col-lg-4" data-category="tapetointi">
    <div class="card h-100 gallery-card">
     <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Makuuhuoneen tehostetapetti">
-     <div class="ratio ratio-4x3"><img src="../kuvat/makuuhuoneen tapetointi.webp" alt="Makuuhuoneen tehostetapetti" data-title="Makuuhuoneen tehostetapetti" data-meta="Tapetointi · Oulu"></div>
+     <div class="ratio ratio-4x3"><img src="../kuvat/galleria2.jpg" alt="Makuuhuoneen tehostetapetti" data-title="Makuuhuoneen tehostetapetti" data-meta="Tapetointi · Oulu"></div>
     </button>
     <div class="card-body">
      <h2 class="h6 fw-semibold mb-1">Makuuhuoneen tehostetapetti</h2>
@@ -78,8 +83,8 @@
 
   <div class="col-md-6 col-lg-4" data-category="ulkomaalaus">
    <div class="card h-100 gallery-card">
-    <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Omakotitalon ulkosivu">
-     <div class="ratio ratio-4x3"><img src="../kuvat/ulkoseinän maalaus.webp" alt="Omakotitalon ulkosivu" data-title="Omakotitalon julkisivu" data-meta="Ulkomaalaus · Kiiminki"></div>
+    <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Omakotitalon julkisivu">
+     <div class="ratio ratio-4x3"><img src="../kuvat/galleria3.jpg" alt="Omakotitalon julkisivu" data-title="Omakotitalon julkisivu" data-meta="Ulkomaalaus · Kiiminki"></div>
     </button>
     <div class="card-body">
      <h2 class="h6 fw-semibold mb-1">Omakotitalon julkisivu</h2>
@@ -91,7 +96,7 @@
   <div class="col-md-6 col-lg-4" data-category="sisamaalaus">
    <div class="card h-100 gallery-card">
     <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Keittiön kaapit ja seinät">
-     <div class="ratio ratio-4x3"><img src="../kuvat/kaapit ja seinät.webp" alt="Keittiön kaapit ja seinät" data-title="Keittiön kaapit ja seinät" data-meta="Sisämaalaus · Oulu"></div>
+     <div class="ratio ratio-4x3"><img src="../kuvat/galleria4.jpg" alt="Keittiön kaapit ja seinät" data-title="Keittiön kaapit ja seinät" data-meta="Sisämaalaus · Oulu"></div>
     </button>
     <div class="card-body">
      <h2 class="h6 fw-semibold mb-1">Keittiön kaapit ja seinät</h2>
@@ -103,7 +108,7 @@
   <div class="col-md-6 col-lg-4" data-category="tapetointi">
    <div class="card h-100 gallery-card">
     <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Eteisen kuvioitu tapetti">
-     <div class="ratio ratio-4x3"><img src="../kuvat/eteinen tapetti.webp" alt="Eteisen kuvioitu tapetti" data-title="Eteisen kuvioitu tapetti" data-meta="Tapetointi · Haukipudas"></div>
+     <div class="ratio ratio-4x3"><img src="../kuvat/galleria5.jpg" alt="Eteisen kuvioitu tapetti" data-title="Eteisen kuvioitu tapetti" data-meta="Tapetointi · Haukipudas"></div>
     </button>
     <div class="card-body">
      <h2 class="h6 fw-semibold mb-1">Eteisen kuvioitu tapetti</h2>
@@ -115,7 +120,7 @@
   <div class="col-md-6 col-lg-4" data-category="ulkomaalaus">
    <div class="card h-100 gallery-card">
     <button type="button" class="gallery-btn" aria-label="Suurenna kuva: Terassi ja aita">
-     <div class="ratio ratio-4x3"><img src="../kuvat/terassi ja aita.webp" alt="Terassi ja aita" data-title="Terassi ja aita" data-meta="Ulkomaalaus · Oulunsalo"></div>
+     <div class="ratio ratio-4x3"><img src="../kuvat/galleria6.jpg" alt="Terassi ja aita" data-title="Terassi ja aita" data-meta="Ulkomaalaus · Oulunsalo"></div>
     </button>
     <div class="card-body">
      <h2 class="h6 fw-semibold mb-1">Terassi ja aita</h2>
@@ -161,56 +166,11 @@
  <div class="container">© 2026 Kotkantien maalaus- ja tapetointi</div>
 </footer>
 
+<button type="button" id="ylos" class="btn btn-primary rounded-circle shadow d-none" aria-label="Takaisin ylös">&uarr;</button>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-
-const mq = window.matchMedia('(prefers-color-scheme: dark)');
-const setTheme = () => document.documentElement.setAttribute('data-bs-theme', mq.matches ? 'dark' : 'light');
-setTheme(); mq.addEventListener('change', setTheme);
-
-
-
-const varit = ['#6f8f86', '#b5836a', '#7d8fa8', '#a99a6e', '#8a7aa0', '#7a9a6e'];
-document.querySelectorAll('#kuvat img').forEach((img, i) => {
-  img.addEventListener('error', () => {
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-      <rect width="800" height="600" fill="${varit[i % varit.length]}"/>
-      <text x="400" y="310" font-family="sans-serif" font-size="32" fill="#fff" text-anchor="middle" opacity=".85">${img.dataset.title}</text></svg>`;
-    img.onerror = null;
-    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
-  }, { once: true });
-  // jos virhe ehti tulla ennen kuuntelijaa
-  if (img.complete && img.naturalWidth === 0) img.dispatchEvent(new Event('error'));
-});
-
-
-
-const painikkeet = document.querySelectorAll('#suodattimet button');
-const kortit = document.querySelectorAll('#kuvat > [data-category]');
-painikkeet.forEach(btn => btn.addEventListener('click', () => {
-  const f = btn.dataset.filter;
-  painikkeet.forEach(b => {
-    const aktiivinen = b === btn;
-    b.classList.toggle('btn-primary', aktiivinen);
-    b.classList.toggle('btn-outline-secondary', !aktiivinen);
-    b.setAttribute('aria-pressed', aktiivinen);
-  });
-  kortit.forEach(k => k.classList.toggle('d-none', f !== 'kaikki' && k.dataset.category !== f));
-}));
-
-
-
-const modalEl = document.getElementById('kuvaModal');
-const modal = new bootstrap.Modal(modalEl);
-document.querySelectorAll('.gallery-btn').forEach(btn => btn.addEventListener('click', () => {
-  const img = btn.querySelector('img');
-  document.getElementById('kuvaIso').src = img.src;
-  document.getElementById('kuvaIso').alt = img.alt;
-  document.getElementById('kuvaOtsikko').textContent = img.dataset.title;
-  document.getElementById('kuvaMeta').textContent = img.dataset.meta;
-  modal.show();
-}));
-
-</script>
+<script src="../js/teema.js"></script>
+<script src="../js/galleria.js"></script>
+<script src="../js/smooth-scroll.js"></script>
 </body>
 </html>

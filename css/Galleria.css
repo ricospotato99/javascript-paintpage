@@ -1,0 +1,131 @@
+:root {
+    --c1: #2f5d7c;
+    --c2: #a9b8a3;
+    --c3: #e3c9a0;
+    --c4: #d9a441;
+    --c5: #b5523b
+}
+
+body {
+    line-height: 1.65
+}
+
+h1,
+h2,
+h3,
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: -.01em
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--c1);
+    --bs-btn-border-color: var(--c1);
+    --bs-btn-hover-bg: #244a63;
+    --bs-btn-hover-border-color: #244a63;
+    --bs-btn-active-bg: #1d3c50;
+    --bs-btn-active-border-color: #1d3c50
+}
+
+[data-bs-theme=dark] .btn-primary {
+    --bs-btn-bg: #7fb0d1;
+    --bs-btn-border-color: #7fb0d1;
+    --bs-btn-color: #12202a;
+    --bs-btn-hover-bg: #96c0dc;
+    --bs-btn-hover-border-color: #96c0dc;
+    --bs-btn-hover-color: #12202a
+}
+
+.logo-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
+    font-size: .65rem;
+    line-height: 1.1;
+    overflow: hidden;
+    display: grid;
+    place-items: center
+}
+
+.logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+.nav-link.active {
+    border-bottom: 3px solid var(--c4)
+}
+
+.filters .btn {
+    --bs-btn-border-radius: 2rem
+}
+
+.filters .btn.on {
+    background: var(--c1);
+    border-color: var(--c1);
+    color: #fff
+}
+
+[data-bs-theme=dark] .filters .btn.on {
+    background: #7fb0d1;
+    border-color: #7fb0d1;
+    color: #12202a
+}
+
+.tile {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    text-align: left;
+    cursor: zoom-in
+}
+
+.tile .ph,
+.tile img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-end;
+    padding: .75rem;
+    color: #fff;
+    font-weight: 600;
+    transition: transform .2s
+}
+
+.tile:hover .ph,
+.tile:hover img {
+    transform: scale(1.015)
+}
+
+.tile small {
+    display: block;
+    color: var(--bs-secondary-color);
+    margin-top: .4rem
+}
+
+.ph.a {
+    background: linear-gradient(135deg, var(--c1), #5b8aa8)
+}
+
+.ph.b {
+    background: linear-gradient(135deg, var(--c5), #d9806a)
+}
+
+.ph.c {
+    background: linear-gradient(135deg, #6f8468, var(--c2));
+    color: #142016
+}
+
+gitmit .ph.d {
+    background: linear-gradient(135deg, var(--c4), var(--c3));
+    color: #2b2110
+}
+
+.item.hide {
+    display: none
+}

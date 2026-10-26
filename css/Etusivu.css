@@ -1,0 +1,110 @@
+:root {
+    --c1: #2f5d7c;
+    --c2: #a9b8a3;
+    --c3: #e3c9a0;
+    --c4: #d9a441;
+    --c5: #b5523b
+}
+
+body {
+    line-height: 1.65
+}
+
+h1,
+h2,
+h3,
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: -.01em
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--c1);
+    --bs-btn-border-color: var(--c1);
+    --bs-btn-hover-bg: #244a63;
+    --bs-btn-hover-border-color: #244a63;
+    --bs-btn-active-bg: #1d3c50;
+    --bs-btn-active-border-color: #1d3c50
+}
+
+[data-bs-theme=dark] .btn-primary {
+    --bs-btn-bg: #7fb0d1;
+    --bs-btn-border-color: #7fb0d1;
+    --bs-btn-color: #12202a;
+    --bs-btn-hover-bg: #96c0dc;
+    --bs-btn-hover-border-color: #96c0dc;
+    --bs-btn-hover-color: #12202a
+}
+
+
+.logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+.fan {
+    display: flex;
+    gap: 6px;
+    align-items: flex-end;
+    height: 360px
+}
+
+.fan i {
+    flex: 1;
+    border-radius: 6px 6px 0 0
+}
+
+.fan i:nth-child(1) {
+    background: var(--c1);
+    height: 100%
+}
+
+.fan i:nth-child(2) {
+    background: var(--c2);
+    height: 84%
+}
+
+.fan i:nth-child(3) {
+    background: var(--c3);
+    height: 68%
+}
+
+.fan i:nth-child(4) {
+    background: var(--c4);
+    height: 52%
+}
+
+.fan i:nth-child(5) {
+    background: var(--c5);
+    height: 36%
+}
+
+.svc {
+    border-top: 6px solid var(--c1)
+}
+
+.col:nth-child(2) .svc {
+    border-color: var(--c4)
+}
+
+.col:nth-child(3) .svc {
+    border-color: var(--c5)
+}
+
+.col:nth-child(4) .svc {
+    border-color: var(--c2)
+}
+
+.phone-big {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: inherit
+}
+
+@media(max-width:767px) {
+    .fan {
+        height: 180px
+    }
+}

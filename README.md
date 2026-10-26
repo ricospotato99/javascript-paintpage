@@ -1,5 +1,8 @@
 # javascript-paintpage
 
+Demo
+https://ricospotato99.github.io/javascript-paintpage/V%C3%A4rientestaus.html
+
 # Kotkantien maalaus- ja tapetointi
 
 Maalaus- ja tapetointiyrityksen esittelysivusto. Sivustolla voi tutustua palveluihin ja töihin, pyytää tarjouksen ja kokeilla eri seinävärejä huoneen kuvassa.

@@ -30,6 +30,12 @@ Sivusto on tehty HTML:llä, [Bootstrap 5](https://getbootstrap.com/):llä ja Jav
 
 ```
 javascript-paintpage/
+├── css/
+│   ├── Etusivu.css
+│   ├── Galleria.css
+│   ├── palvelut.css
+│   ├── värientestaus.css
+│   └── yhteystiedot.css
 ├── js/
 │   ├── galleria.js
 │   ├── smooth-scroll.js

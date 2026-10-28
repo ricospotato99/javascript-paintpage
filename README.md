@@ -30,16 +30,27 @@ Sivusto on tehty HTML:llä, [Bootstrap 5](https://getbootstrap.com/):llä ja Jav
 
 ```
 javascript-paintpage/
-├── html/
-│   ├── index.html
-│   ├── Palvelut.html
-│   ├── Galleria.html
-│   ├── Yhteystiedot.html
-│   └── Värientestaus.html
+├── js/
+│   ├── galleria.js
+│   ├── smooth-scroll.js
+│   ├── teema.js
+│   ├── varitesteri.js
+│   └── yhteystiedot.js
 ├── kuvat/
-│   ├── kotkatielogo.png
-│   └── galleria1.jpg … galleria6.jpg
-└── README.md
+│   ├── eteinen tapetti.webp
+│   ├── kaapit ja seinät.webp
+│   ├── Kotkantielogo.png
+│   ├── makuhuoneen tapetointi.webp
+│   ├── olohuoneen maalaus.webp
+│   ├── terassi ja aita.webp
+│   ├── ulkoseinän maalaus.webp
+├── README.md
+├── licence.ls
+├── index.html
+├── Palvelut.html
+├── Galleria.html
+├── Yhteystiedot.html
+├── Värientestaus.html
 ```
 
 Sivujen polut ovat suhteellisia (esimerkiksi `../kuvat/kotkatielogo.png`), joten `html`- ja `kuvat`-kansioiden pitää olla vierekkäin.

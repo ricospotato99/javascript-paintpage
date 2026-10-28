@@ -45,32 +45,6 @@ javascript-paintpage/
 
 Sivujen polut ovat suhteellisia (esimerkiksi `../kuvat/kotkatielogo.png`), joten `html`- ja `kuvat`-kansioiden pitää olla vierekkäin.
 
-## Käyttöönotto
-
-### Vaihtoehto 1: avaa selaimessa
-
-Avaa haluamasi HTML-tiedosto kaksoisnapsauttamalla sitä. Bootstrap ladataan CDN-palvelusta, joten tarvitset internetyhteyden.
-
-### Vaihtoehto 2: paikallinen palvelin
-
-Asenna [Node.js](https://nodejs.org/) ja aja projektin kansiossa:
-
-```bash
-npx live-server .
-```
-
-Sivu avautuu osoitteeseen `http://127.0.0.1:8080`, ja se päivittyy automaattisesti, kun tallennat muutoksen. Vaihtoehtoisesti voit käyttää VS Coden Live Server -lisäosaa.
-
-> **Windows PowerShell:** jos `npx` antaa virheen `running scripts is disabled`, aja kerran `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` tai käytä komentoa `npx.cmd live-server .`.
-
-## Sisällön muokkaaminen
-
-- **Yhteystiedot:** vaihda puhelinnumero, osoite ja aukioloajat tiedostossa `Yhteystiedot.html`. Vaihda sähköpostiosoite sekä `Yhteystiedot.html`:n `mailto:`-linkkiin että lomakkeen skriptiin.
-- **Galleria:** lisää omat kuvat kansioon `kuvat` ja vaihda niiden tiedostonimet sekä kuvatekstit `Galleria.html`:ään. Jos kuvaa ei löydy, sivu näyttää värillisen paikkamerkin.
-- **Palvelut:** muokkaa kortteja suoraan `Palvelut.html`:ssä.
-- **Väritesterin sävyt:** muokkaa `PRESETS`-taulukkoa tiedoston `Värientestaus.html` skriptissä. Jokaisella sävyllä on nimi ja heksakoodi.
-- **Väritesterin koot:** `--tester-max` rajoittaa koko osion ja `--room-max` huonekuvan enimmäisleveyttä.
-
 ## Tunnetut rajoitukset
 
 - Tarjouslomake käyttää `mailto:`-linkkiä, joten se toimii vain, jos käyttäjällä on sähköpostiohjelma. Viestin automaattiseen lähettämiseen tarvitaan palvelin tai lomakepalvelu.

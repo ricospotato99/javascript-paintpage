@@ -45,7 +45,7 @@ javascript-paintpage/
 │   ├── terassi ja aita.webp
 │   ├── ulkoseinän maalaus.webp
 ├── README.md
-├── licence.ls
+├── licence.txt
 ├── index.html
 ├── Palvelut.html
 ├── Galleria.html

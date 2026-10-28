@@ -1,6 +1,10 @@
-/* Teema: seuraa laitteen tummaa tai vaaleaa tilaa.
-   Käytössä kaikilla sivuilla. */
+// Teema
 
-const mq = window.matchMedia('(prefers-color-scheme: dark)');
-const setTheme = () => document.documentElement.setAttribute('data-bs-theme', mq.matches ? 'dark' : 'light');
-setTheme(); mq.addEventListener('change', setTheme);
+var mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+function setTheme() {
+  $('html').attr('data-bs-theme', mq.matches ? 'dark' : 'light');
+}
+
+setTheme();
+mq.addEventListener('change', setTheme);

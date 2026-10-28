@@ -1,27 +1,36 @@
-/* Pehmeä vieritys ankkurilinkeille ja Takaisin ylös -painike (#ylos).
-   Käytössä kaikilla sivuilla. */
+// smooth scroll
 
-(function () {
-  const nav = document.querySelector('.navbar');
-  const reduce = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const behavior = () => (reduce() ? 'auto' : 'smooth');
-  const offset = () => (nav ? nav.offsetHeight : 0) + 8;
-
-  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
+$(function () {
+  var $nav = $('.navbar').first();
+  var $menu = $('#menu');
+  var $ylos = $('#ylos');
+  var $ikkuna = $(window);
+ 
+  function reduce() { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  function behavior() { return reduce() ? 'auto' : 'smooth'; }
+  function offset() { return ($nav.outerHeight() || 0) + 8; }
+ 
+  /* Ankkurilinkit */
+  $('a[href^="#"]').on('click', function (e) {
+    var id = $(this).attr('href');
     if (id.length < 2) return;
-    const target = document.querySelector(id);
-    if (!target) return;
+ 
+    var $target = $(id);
+    if (!$target.length) return;
+ 
     e.preventDefault();
-    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset(), behavior: behavior() });
+    window.scrollTo({ top: $target.offset().top - offset(), behavior: behavior() });
     history.pushState(null, '', id);
-    const menu = document.getElementById('menu');
-    if (menu && menu.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(menu).hide();
-  }));
-
-  const ylos = document.getElementById('ylos');
-  const paivita = () => ylos.classList.toggle('d-none', window.scrollY < 300);
-  window.addEventListener('scroll', paivita, { passive: true });
-  ylos.addEventListener('click', () => window.scrollTo({ top: 0, behavior: behavior() }));
-  paivita();
-})();
+ 
+    if ($menu.hasClass('show')) bootstrap.Collapse.getOrCreateInstance($menu[0]).hide();
+  });
+ 
+  /* "Ylös"-painike */
+  if ($ylos.length) {
+    function paivita() { $ylos.toggleClass('d-none', $ikkuna.scrollTop() < 300); }
+ 
+    $ikkuna.on('scroll', paivita);
+    $ylos.on('click', function () { window.scrollTo({ top: 0, behavior: behavior() }); });
+    paivita();
+  }
+});

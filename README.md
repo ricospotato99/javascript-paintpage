@@ -1,7 +1,6 @@
 # javascript-paintpage
 
-Demo
-https://ricospotato99.github.io/javascript-paintpage/V%C3%A4rientestaus.html
+👉 **[Avaa demo](https://ricospotato99.github.io/javascript-paintpage/index.html)**
 
 # Kotkantien maalaus- ja tapetointi
 
